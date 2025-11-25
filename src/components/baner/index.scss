@@ -1,0 +1,242 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ===========================
+     IMAGEM DO BANNER
+  ============================ */
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(92%);
+    transform: scale(1.05);
+    display: block;
+    transition: transform 0.15s ease-out;
+    margin-bottom: -2px; // 🔥 remove linha indesejada
+  }
+
+  /* ===========================
+     OVERLAY ESCURO
+  ============================ */
+  .dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 5;
+  }
+
+  /* ===========================
+     TEXTO DO BANNER
+  ============================ */
+  .overlay {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    width: 90%;
+    margin-top: 70px;
+    max-width: 850px;
+
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ffffff, #ece4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: 300;
+      color: #ffffff;
+      margin-top: 10px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+  }
+
+  /* ===========================
+     BOTÃO
+  ============================ */
+  .btn {
+    background: linear-gradient(135deg, #9c4bcc, #6d2b8f);
+    padding: 14px 32px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 40px;
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(127, 55, 171, 0.4);
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(127, 55, 171, 0.55);
+    }
+  }
+
+  /* ===========================
+     ONDA DO FUNDO
+  ============================ */
+  .onda-fundo {
+    position: absolute;
+    bottom: -1px; // 🔥 cola a onda na imagem
+    width: 100%;
+    z-index: 8;
+    line-height: 0;
+
+    svg {
+      width: 100%;
+      height: 140px;
+      display: block; // 🔥 evita linha entre imagem e onda
+    }
+  }
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+      RESPONSIVO 🟣
+=========================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .hero {
+    height: 520px;
+
+    .overlay {
+      margin-top: 50px;
+
+      h1 {
+        font-size: 34px;
+        line-height: 1.25;
+      }
+
+      p {
+        font-size: 19px;
+      }
+    }
+
+    .btn {
+      padding: 12px 26px;
+      font-size: 16px;
+    }
+
+    .banner-img {
+      object-position: center top;
+    }
+  }
+}
+
+/* Celulares médios */
+@media (max-width: 650px) {
+  .hero {
+    height: 480px;
+
+    .overlay {
+      width: 92%;
+      margin-top: 40px;
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+
+    .onda-fundo svg {
+      height: 110px;
+    }
+  }
+}
+
+/* Celulares pequenos (iPhone 12 Mini, Android básico) */
+@media (max-width: 480px) {
+  .hero {
+    height: 440px;
+
+    .overlay {
+      margin-top: 30px;
+
+      h1 {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .btn {
+      padding: 10px 22px;
+      font-size: 15px;
+    }
+
+    .banner-img {
+      object-position: center;
+      transform: scale(1.1); // evita cortes ruins
+    }
+
+    .onda-fundo svg {
+      height: 95px;
+    }
+  }
+}
+
+/* Celulares MUITO pequenos (Galaxy Y, iPhone SE antigo) */
+@media (max-width: 380px) {
+  .hero {
+    height: 400px;
+
+    .overlay {
+      margin-top: 20px;
+
+      h1 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .onda-fundo svg {
+      height: 80px;
+    }
+  }
+}

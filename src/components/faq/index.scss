@@ -1,0 +1,136 @@
+.faq-container {
+    max-width: 100%;
+    padding: 60px;
+
+    .faq-title {
+        font-size: 2.7rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-align: left;
+        color: #000000;
+    }
+
+    .faq-item {
+        padding: 18px 0;
+        border-bottom: 1px solid #e2e2e2;
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s;
+            gap: 10px;
+
+            &:hover {
+                color: #9746AB;
+            }
+
+            .number {
+                font-weight: bold;
+                font-size: 19px;
+                font-family: inter, sans-serif;
+                color: #000000;
+            }
+
+            .text {
+                flex: 1;
+                font-size: 20px;
+                font-family: inter, sans-serif;
+                font-weight: 700;
+            }
+
+            .icon {
+                transition: transform 0.3s;
+            }
+
+            .rotate {
+                transform: rotate(180deg);
+            }
+        }
+
+        .answer {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+    }
+}
+
+/* ===================================================================
+   📱 RESPONSIVIDADE
+=================================================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .faq-container {
+        padding: 50px;
+
+        .faq-title {
+            font-size: 2.4rem;
+        }
+
+        .faq-item .question .text {
+            font-size: 18px;
+        }
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 40px 25px;
+
+        .faq-title {
+            font-size: 2.2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            .question {
+                .number {
+                    font-size: 18px;
+                }
+
+                .text {
+                    font-size: 17px;
+                }
+            }
+
+            .answer {
+                font-size: 0.95rem;
+                text-align: justify;
+            }
+        }
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .faq-container {
+        padding: 35px 20px;
+
+        .faq-title {
+            font-size: 1.9rem;
+        }
+
+        .faq-item {
+            padding: 15px 0;
+
+            .question {
+                .number {
+                    font-size: 16px;
+                }
+                .text {
+                    font-size: 16px;
+                }
+            }
+
+            .answer {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

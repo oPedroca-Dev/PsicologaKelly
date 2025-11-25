@@ -6,19 +6,19 @@ const cards = [
   {
     title: "Acompanhamento Psicológico",
     desc: "No acompanhamento psicológico, ofereço um espaço seguro e acolhedor para que você possa se ouvir, se entender e se fortalecer emocionalmente. Através de encontros regulares, te ajudo a olhar com mais clareza para suas emoções, pensamentos e comportamentos, construindo juntos caminhos mais leves e saudáveis para lidar com os desafios da vida.",
-    image: "/baner.png",
+    image: "/acompanhamento.jpg",
     color: "#9944b3"
   },
   {
     title: "Consulta Psicológica",
     desc: "Cuidar da mente é tão importante quanto cuidar do corpo. Na consulta psicológica, você encontra um espaço acolhedor e ético, onde é possível falar com liberdade, sem julgamentos. Aqui, utilizo abordagens como Terapia Cognitivo-Comportamental, Hipnoterapia e conhecimentos em Neurociência para te ajudar a compreender suas emoções",
-    image: "/baner.png",
+    image: "/consulta.jpg",
     color: "#6bb7dd"
   },
   {
     title: "Hipnoterapia",
     desc: "Hipnoterapia é uma técnica terapêutica poderosa que ajuda você a acessar seu subconsciente e transformar pensamentos, emoções e comportamentos negativos. Com ela, você se reconecta com sua mente de forma profunda e segura, promovendo autoconhecimento, bem-estar e equilíbrio emocional.",
-    image: "/baner.png",
+    image: "/hip.jpg",
     color: "#9944b3"
   }
 ];

@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from "react";
+import "./index.scss";
 
 export default function WhatsAppButton() {
   const [isMobile, setIsMobile] = useState(false);

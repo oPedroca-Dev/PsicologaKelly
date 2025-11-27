@@ -29,13 +29,13 @@ export default function Servico() {
   const next = () => setIndex((prev) => (prev + 1) % cards.length);
   const prev = () => setIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
-  // AUTO PLAY
+
   useEffect(() => {
     const auto = setInterval(next, 4000);
     return () => clearInterval(auto);
   }, []);
 
-  // TOUCH / SWIPE
+
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const minSwipe = 50;

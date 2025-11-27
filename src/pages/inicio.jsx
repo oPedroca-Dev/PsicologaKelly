@@ -11,7 +11,7 @@ import WhatsAppButton from "../components/watts";
 export default function Inicio() {
   return (
     <div>
-      
+      <WhatsAppButton/>
       <Cabecalho />
       <Baner />
       <Dores />

@@ -70,7 +70,7 @@ export default function Dores() {
       </div>
 
       <motion.a
-        href="https://wa.me/11942045057?text=Ol%C3%A1%20Kelly%2C%20gostaria%20de%20marcar%20uma%20consulta"
+        href="https://calendar.app.google/S78sNJuADpTCmqhu6"
         className="btn-consulta"
         target="_blank"
         rel="noopener noreferrer"

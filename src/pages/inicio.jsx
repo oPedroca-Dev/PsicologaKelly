@@ -6,10 +6,12 @@ import Quemsomos from "../components/quemsomos";
 import BigNum from "../components/bignum";
 import FAQ from "../components/faq";
 import Rodape from "../components/rodape";
+import WhatsAppButton from "../components/watts";
 
 export default function Inicio() {
   return (
     <div>
+      <WhatsAppButton/>
       <Cabecalho />
       <Baner />
       <Dores />

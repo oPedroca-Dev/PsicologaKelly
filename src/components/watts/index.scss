@@ -1,0 +1,104 @@
+/* CONTAINER */
+.zap-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 2000;
+  text-decoration: none;
+}
+
+/* DESKTOP */
+.zap-content.desktop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #3fd777;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.zap-content.desktop:hover {
+  transform: scale(1.06);
+}
+
+/* ICONE BASE */
+.zap-icon {
+  width: 34px;
+  height: 34px;
+}
+
+/* ===================== */
+/*        MOBILE         */
+/* ===================== */
+.zap-content.mobile {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  
+  /* EFEITO PREMIUM */
+  background: rgba(212, 200, 200, 0.4);
+backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* ANIMAÇÃO */
+  animation: pulse 2s infinite, float 3s ease-in-out infinite;
+  
+  /* BORDA BRILHANTE */
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.7), 
+              0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Ícone maior no mobile */
+.zap-content.mobile .zap-icon {
+  width: 42px;
+  height: 42px;
+}
+
+/* ANIMAÇÃO DE PULSO APRIMORADA */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 
+      0 0 18px rgba(37, 211, 102, 0.7),
+      0 0 35px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 28px rgba(37, 211, 102, 0.9),
+      0 0 55px rgba(37, 211, 102, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 
+      0 0 18px rgba(37, 211, 102, 0.7),
+      0 0 35px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* ANIMAÇÃO DE FLUTUAR (super sutil) */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Animação ao clicar */
+.zap-content.mobile:active {
+  transform: scale(0.92);
+  transition: transform 0.1s;
+}

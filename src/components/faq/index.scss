@@ -1,136 +1,131 @@
-.faq-container {
-    max-width: 100%;
-    padding: 60px;
+.faq-section {
+  padding: 100px 5%;
+  background-color: #fcfaff;
+  display: flex;
+  justify-content: center;
+
+  .faq-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; // Divide em duas colunas desiguais
+    gap: 80px;
+    align-items: start;
+  }
+
+  .faq-intro {
+    .icon-badge {
+      width: 50px;
+      height: 50px;
+      background: #9746ab;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
 
     .faq-title {
-        font-size: 2.7rem;
+      font-size: 42px;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .faq-subtitle {
+      font-size: 18px;
+      color: #666;
+      margin: 20px 0 40px;
+      line-height: 1.6;
+    }
+
+    .faq-cta {
+      span { display: block; font-size: 14px; color: #999; margin-bottom: 10px; }
+      a {
+        color: #9746ab;
         font-weight: 700;
-        margin-bottom: 30px;
+        text-decoration: underline;
+        &:hover { color: #7b2fa5; }
+      }
+    }
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .faq-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+      overflow: hidden;
+
+      &.active {
+        border-color: #9746ab;
+        box-shadow: 0 10px 30px rgba(151, 70, 171, 0.08);
+      }
+
+      .question-btn {
+        width: 100%;
+        padding: 25px;
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
         text-align: left;
-        color: #000000;
-    }
+        gap: 20px;
 
-    .faq-item {
-        padding: 18px 0;
-        border-bottom: 1px solid #e2e2e2;
-
-        .question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: color 0.3s;
-            gap: 10px;
-
-            &:hover {
-                color: #9746AB;
-            }
-
-            .number {
-                font-weight: bold;
-                font-size: 19px;
-                font-family: inter, sans-serif;
-                color: #000000;
-            }
-
-            .text {
-                flex: 1;
-                font-size: 20px;
-                font-family: inter, sans-serif;
-                font-weight: 700;
-            }
-
-            .icon {
-                transition: transform 0.3s;
-            }
-
-            .rotate {
-                transform: rotate(180deg);
-            }
+        .text {
+          font-size: 18px;
+          font-weight: 700;
+          color: #1a1a1a;
         }
 
-        .answer {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #444;
-            line-height: 1.6;
-            overflow: hidden;
+        .status-icon {
+          color: #9746ab;
+          flex-shrink: 0;
         }
+      }
+
+      .answer-content {
+        padding: 0 25px 25px 25px;
+        p {
+          color: #555;
+          line-height: 1.7;
+          font-size: 16px;
+        }
+      }
     }
+  }
 }
 
 /* ===================================================================
    📱 RESPONSIVIDADE
 =================================================================== */
 
-/* Tablets */
-@media (max-width: 1024px) {
-    .faq-container {
-        padding: 50px;
-
-        .faq-title {
-            font-size: 2.4rem;
-        }
-
-        .faq-item .question .text {
-            font-size: 18px;
-        }
+@media (max-width: 992px) {
+  .faq-section {
+    padding: 80px 5%;
+    .faq-wrapper {
+      grid-template-columns: 1fr;
+      gap: 50px;
     }
+    .faq-intro {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 
-/* Celulares grandes */
-@media (max-width: 768px) {
-    .faq-container {
-        padding: 40px 25px;
-
-        .faq-title {
-            font-size: 2.2rem;
-            text-align: center;
-        }
-
-        .faq-item {
-            .question {
-                .number {
-                    font-size: 18px;
-                }
-
-                .text {
-                    font-size: 17px;
-                }
-            }
-
-            .answer {
-                font-size: 0.95rem;
-                text-align: justify;
-            }
-        }
-    }
-}
-
-/* Celulares pequenos */
 @media (max-width: 480px) {
-    .faq-container {
-        padding: 35px 20px;
-
-        .faq-title {
-            font-size: 1.9rem;
-        }
-
-        .faq-item {
-            padding: 15px 0;
-
-            .question {
-                .number {
-                    font-size: 16px;
-                }
-                .text {
-                    font-size: 16px;
-                }
-            }
-
-            .answer {
-                font-size: 0.9rem;
-            }
-        }
-    }
+  .faq-section .faq-list .faq-card .question-btn .text {
+    font-size: 16px;
+  }
 }

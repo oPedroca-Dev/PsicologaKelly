@@ -1,128 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+.bignumbers-section {
+  padding: 60px 5%;
+  background: #f8faff; // Um azul/cinza muito sutil
+  display: flex;
+  justify-content: center;
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Playfair Display", serif;
-    gap: 15px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
 
-    .card {
-        background-color: #E1EAF5;
-        border-radius: 10px;
-        padding: 30px 25px;
-        margin: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        text-align: center;
-        transition: 0.3s ease;
-
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
+    .stat-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; // Alinhamento à esquerda é mais moderno
+      text-align: left;
+      
+      .number-wrapper {
+        margin-bottom: 15px;
+        
         .number {
-            font-size: 2.2rem;
-            text-align: left;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: #9746AB;
+          font-family: "Playfair Display", serif;
+          font-size: 3.5rem;
+          color: #9746AB;
+          line-height: 1;
+          font-weight: 700;
+          margin: 0;
         }
 
+        .accent-line {
+          width: 40px;
+          height: 4px;
+          background: #9746AB;
+          margin-top: 8px;
+          border-radius: 2px;
+          opacity: 0.6;
+        }
+      }
+
+      .text-wrapper {
         .title {
-            font-size: 1.1rem;
-            text-align: left;
-            color: #000000;
-            margin-bottom: 10px;
+          font-family: "Playfair Display", serif;
+          font-size: 1.4rem;
+          color: #1a1a1a;
+          margin-bottom: 8px;
+          font-weight: 600;
         }
 
         .desc {
-            text-align: left;
-            font-size: 16px;
-            color: #555;
+          font-size: 15px;
+          color: #666;
+          line-height: 1.5;
+          max-width: 280px;
         }
+      }
     }
+  }
 }
+
 /* ===========================
-      RESPONSIVO
+      RESPONSIVIDADE
 =========================== */
 
-/* TABLETS – até 900px */
-@media (max-width: 900px) {
-  .container {
+@media (max-width: 1024px) {
+  .bignumbers-section .container {
     gap: 20px;
-    flex-wrap: wrap;
-
-    .card {
-      width: 280px;
-      padding: 28px 22px;
-
-      .number {
-        font-size: 2rem;
-      }
-
-      .title {
-        font-size: 1rem;
-      }
-
-      .desc {
-        font-size: 15px;
-      }
-    }
+    .stat-card .number-wrapper .number { font-size: 2.8rem; }
   }
 }
 
-/* CELULARES MÉDIOS – até 650px */
-@media (max-width: 650px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-
-    .card {
-      width: 90%;
-      max-width: 350px;
-    }
-  }
-}
-
-/* CELULARES PEQUENOS – até 480px */
-@media (max-width: 480px) {
-  .container {
-    .card {
-      padding: 24px 18px;
-
-      .number {
-        font-size: 1.8rem;
-      }
-
-      .title {
-        font-size: 0.95rem;
-      }
-
-      .desc {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-/* MINI DISPOSITIVOS – até 360px */
-@media (max-width: 360px) {
-  .container {
-    .card {
-      padding: 20px 16px;
-
-      .number {
-        font-size: 1.6rem;
-      }
-
-      .title {
-        font-size: 0.9rem;
-      }
-
-      .desc {
-        font-size: 13.5px;
+@media (max-width: 768px) {
+  .bignumbers-section {
+    padding: 40px 20px;
+    .container {
+      grid-template-columns: 1fr; // Um embaixo do outro no mobile
+      gap: 40px;
+      
+      .stat-card {
+        align-items: center;
+        text-align: center;
+        .accent-line { margin: 8px auto; }
+        .desc { max-width: 100%; }
       }
     }
   }

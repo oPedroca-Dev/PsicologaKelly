@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import "./index.scss";
 
 const cards = [
@@ -7,19 +7,19 @@ const cards = [
     title: "Acompanhamento Psicológico",
     desc: "No acompanhamento psicológico, ofereço um espaço seguro e acolhedor para que você possa se ouvir, se entender e se fortalecer emocionalmente. Através de encontros regulares, te ajudo a olhar com mais clareza para suas emoções, pensamentos e comportamentos, construindo juntos caminhos mais leves e saudáveis para lidar com os desafios da vida.",
     image: "/acompanhamento.jpg",
-    color: "#9944b3"
+    color: "#f8f0fb"
   },
   {
     title: "Consulta Psicológica",
-    desc: "Cuidar da mente é tão importante quanto cuidar do corpo. Na consulta psicológica, você encontra um espaço acolhedor e ético, onde é possível falar com liberdade, sem julgamentos. Aqui, utilizo abordagens como Terapia Cognitivo-Comportamental, Hipnoterapia e conhecimentos em Neurociência para te ajudar a compreender suas emoções",
+    desc: "Cuidar da mente é tão importante quanto cuidar do corpo. Na consulta psicológica, você encontra um espaço acolhedor e ético, onde é possível falar com liberdade, sem julgamentos. Aqui, utilizo abordagens como Terapia Cognitivo-Comportamental e conhecimentos em Neurociência para te ajudar a compreender suas emoções.",
     image: "/consulta.jpg",
-    color: "#6bb7dd"
+    color: "#eff7fd"
   },
   {
     title: "Hipnoterapia",
     desc: "Hipnoterapia é uma técnica terapêutica poderosa que ajuda você a acessar seu subconsciente e transformar pensamentos, emoções e comportamentos negativos. Com ela, você se reconecta com sua mente de forma profunda e segura, promovendo autoconhecimento, bem-estar e equilíbrio emocional.",
     image: "/hip.jpg",
-    color: "#9944b3"
+    color: "#f3f0f7"
   }
 ];
 
@@ -29,61 +29,51 @@ export default function Servico() {
   const next = () => setIndex((prev) => (prev + 1) % cards.length);
   const prev = () => setIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
-
   useEffect(() => {
-    const auto = setInterval(next, 4000);
+    const auto = setInterval(next, 6000);
     return () => clearInterval(auto);
   }, []);
 
-
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const minSwipe = 50;
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > minSwipe) next();
-    if (touchEnd - touchStart > minSwipe) prev();
-  };
-
   return (
-    <div id="servico" className="servicos-container">
-      <h2 className="titulo">Serviços Oferecidos</h2>
+    <section id="servico" className="servicos-container">
+      <div className="header-box">
+        <h2 className="titulo">Serviços Oferecidos</h2>
+        <div className="underline"></div>
+      </div>
 
-      <div
-        className="carousel"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-
-        {/* SETA ESQUERDA */}
-        <button className="seta esquerda" onClick={prev}>
-          <ChevronLeft size={32} />
+      <div className="carousel-wrapper">
+        <button className="nav-btn left" onClick={prev} aria-label="Anterior">
+          <ChevronLeft size={28} />
         </button>
 
-        {/* CARD */}
-        <div className="cards" style={{ backgroundColor: cards[index].color }}>
-          <img src={cards[index].image} className="card-img" />
-          <div className="card-info">
-            <h3>{cards[index].title}</h3>
-            <p>{cards[index].desc}</p>
+        <div className="card-display" key={index}>
+          <div className="image-side">
+            <img src={cards[index].image} alt={cards[index].title} />
+          </div>
+          
+          <div className="content-side" style={{ backgroundColor: cards[index].color }}>
+            <Quote className="quote-icon" size={50} />
+            <div className="text-content">
+              <h3>{cards[index].title}</h3>
+              <p>{cards[index].desc}</p>
+            </div>
           </div>
         </div>
 
-        {/* SETA DIREITA */}
-        <button className="seta direita" onClick={next}>
-          <ChevronRight size={32} />
+        <button className="nav-btn right" onClick={next} aria-label="Próximo">
+          <ChevronRight size={28} />
         </button>
-
       </div>
-    </div>
+
+      <div className="dots-navigation">
+        {cards.map((_, i) => (
+          <span 
+            key={i} 
+            className={`dot ${i === index ? 'active' : ''}`} 
+            onClick={() => setIndex(i)} 
+          />
+        ))}
+      </div>
+    </section>
   );
 }

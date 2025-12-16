@@ -1,26 +1,55 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import "./index.scss";
 
 export default function Cabecalho() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Bloqueia o scroll do corpo quando o menu está aberto
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
 
   return (
-    <header className="cabecalho">
-      <h1 className="logo">Kelly Ferreira | Psicóloga & Hipnoterapeuta</h1>
+    <header className={`cabecalho ${scrolled ? "scrolled" : ""} ${open ? "is-open" : ""}`}>
+      <div className="nav-container">
+        <div className="logo-area">
+          <span className="name">Kelly Ferreira</span>
+          <span className="divider">|</span>
+          <span className="spec">Psicóloga</span>
+        </div>
 
-      {/* BOTÃO MENU MOBILE */}
-      <button className="hamburguer" onClick={() => setOpen(!open)}>
-        {open ? <X size={28} /> : <Menu size={28} />}
-      </button>
+        {/* MENU */}
+        <nav className={`menu ${open ? "menu-open" : ""}`}>
+          <a href="#servico" onClick={() => setOpen(false)}>Serviços</a>
+          <a href="#QuemSou" onClick={() => setOpen(false)}>Sobre</a>
+          <a href="#duvidas" onClick={() => setOpen(false)}>Dúvidas</a>
+          <a href="#contato" onClick={() => setOpen(false)}>Contato</a>
+          <a href="https://wa.me/11942045057" className="btn-nav">
+             Agendar Consulta
+          </a>
+        </nav>
 
-      {/* MENU */}
-      <nav className={`menu ${open ? "menu-open" : ""}`}>
-        <a href="#servico" onClick={() => setOpen(false)}>Serviços</a>
-        <a href="#QuemSou" onClick={() => setOpen(false)}>Quem Sou</a>
-        <a href="#duvidas" onClick={() => setOpen(false)}>Dúvidas</a>
-        <a href="#contato" onClick={() => setOpen(false)}>Contato</a>
-      </nav>
+        {/* HAMBÚRGUER ANIMADO */}
+        <button 
+          className={`hamburguer ${open ? "hamburguer-active" : ""}`} 
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
+          <div className="hamburguer-box">
+            <div className="hamburguer-inner"></div>
+          </div>
+        </button>
+      </div>
+      
+      {/* OVERLAY */}
+      {open && <div className="menu-overlay" onClick={() => setOpen(false)}></div>}
     </header>
   );
 }

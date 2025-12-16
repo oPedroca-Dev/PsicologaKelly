@@ -1,81 +1,123 @@
 .sintomas-container {
   width: 100%;
-  padding: 120px 5px 70px; 
+  padding: 100px 5%;
+  background: radial-gradient(circle at top right, #fdfaff, #ffffff);
   text-align: center;
-  overflow-x: hidden;
+
+  .tagline {
+    color: #9944b3;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+  }
 
   .titulo {
-    font-size: 40px;
-    color: #05324d;
-    margin-bottom: 10px;
-    font-weight: 700;
+    font-size: clamp(30px, 5vw, 42px);
+    color: #1a2b3c;
+    margin-bottom: 60px;
+    font-weight: 800;
   }
 
-  .subtitulo {
-    font-size: 20px;
-    color: #4d5b6a;
-    max-width: 900px;
-    margin: 0 auto 60px auto;
-    line-height: 1.5;
-  }
-
-  .cardo {
-    display: flex;
-    justify-content: center;
+  .cardo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    .card {
-      background: #ffffff;
-      width: 350px;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-left: 6px solid #0b7abd;
-      transition: 0.3s ease;
+  .card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
 
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--accent-color);
+    }
+
+    .card-header {
+      margin-bottom: 25px;
+      .icon-box {
+        color: var(--accent-color);
+        margin-bottom: 15px;
+        background: rgba(var(--accent-color), 0.1); // Nota: requer ajuste de cor hex para rgb se quiser transparência nativa
+        display: inline-block;
+        padding: 15px;
+        border-radius: 50%;
       }
-
       h2 {
-        color: #0b7abd;
-        font-size: 26px;
-        margin-bottom: 18px;
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #333;
       }
+    }
 
-      ul {
-        text-align: left;
-        line-height: 1.5;
-        color: #2b3b4b;
+    .sintomas-lista {
+      list-style: none;
+      padding: 0;
+      text-align: left;
 
-        li {
-          margin-bottom: 10px;
-          font-size: 17px;
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 15px;
+        color: #555;
+        font-size: 16px;
+        line-height: 1.4;
+
+        .check-icon {
+          color: var(--accent-color);
+          flex-shrink: 0;
+          margin-top: 3px;
         }
       }
     }
   }
 
-    .btn-consulta {
-    background: linear-gradient(135deg, #9c4bcc, #6d2b8f);
-    padding: 14px 32px;
-    font-size: 18px;
-    color: #fff;
-    border-radius: 40px;
-    display: inline-block;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 25px;
-    box-shadow: 0 6px 20px rgba(127, 55, 171, 0.4);
-    transition: 0.3s ease;
-    backdrop-filter: blur(4px);
+  .footer-action {
+    margin-top: 60px;
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 25px;
+    }
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(127, 55, 171, 0.55);
+    .btn-consulta-modern {
+      background: #9944b3;
+      padding: 18px 40px;
+      font-size: 18px;
+      color: #fff;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 25px rgba(153, 68, 179, 0.3);
+
+      &:hover {
+        transform: scale(1.05);
+        background: #813997;
+        box-shadow: 0 15px 35px rgba(153, 68, 179, 0.4);
+      }
     }
   }
+}
+
+@media (max-width: 480px) {
+  .cardo-grid { grid-template-columns: 1fr; }
+  .sintomas-container { padding: 60px 20px; }
 }

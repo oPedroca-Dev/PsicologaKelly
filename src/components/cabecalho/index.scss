@@ -1,122 +1,178 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .cabecalho {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 65px;
-
+  height: 80px; // Reduzi um pouco a altura inicial para mobile
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding: 0; // Removido o padding daqui para não somar com o 100% width
+  background: transparent;
+  transition: all 0.4s ease;
+  z-index: 2000;
 
-  padding: 0 40px;
-
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-
-  z-index: 1000;
-
-  .logo {
-    font-size: 20px;
-    font-weight: 600;
-    color: #3a1f5d;
+  &.scrolled {
+    height: 65px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   }
 
-  /* MENU DESKTOP */
-  .menu {
+  .nav-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; // Padding consistente nas laterais
+  }
+
+  .logo-area {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 8px;
+    z-index: 2200;
 
-    a {
-      text-decoration: none;
-      color: #333;
-      font-size: 18px;
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 4px;
-      transition: 0.3s ease;
-
-      &:hover {
-        color: #7a2fa3;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 0%;
-        background-color: #7a2fa3;
-        transition: 0.3s ease;
-        border-radius: 4px;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; // Ajustado para não quebrar em telas pequenas
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap; // Impede que o nome quebre em duas linhas
+    }
+    .divider, .spec {
+      display: inline-block; // Garante que apareçam no desktop
+    }
+    .divider { color: #9746ab; font-weight: 300; }
+    .spec {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
     }
   }
 
-  /* BOTÃO HAMBURGUER */
+  /* Menu Desktop */
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    a:not(.btn-nav) {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+      &:hover { color: #9746ab; }
+    }
+
+    .btn-nav {
+      background: #9746ab;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+      white-space: nowrap;
+      &:hover { background: #7a2fa3; transform: translateY(-1px); }
+    }
+  }
+
   .hamburguer {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100;
+    padding: 10px;
+    z-index: 2200;
+    
+    .hamburguer-box { width: 24px; height: 18px; position: relative; }
+    .hamburguer-inner {
+      top: 50%;
+      &, &::before, &::after {
+        width: 24px; height: 2px; background-color: #1a1a1a;
+        position: absolute; transition: all 0.3s;
+      }
+      &::before { content: ""; top: -8px; left: 0; }
+      &::after { content: ""; bottom: -8px; left: 0; }
+    }
+
+    &.hamburguer-active .hamburguer-inner {
+      background: transparent !important;
+      &::before { transform: rotate(45deg); top: 0; background: #9746ab; }
+      &::after { transform: rotate(-45deg); bottom: 0; background: #9746ab; }
+    }
   }
 }
 
+/* ============================================================
+   RESPONSIVIDADE (Ajustes Reais)
+   ============================================================ */
 
-/* ===========================
-   MOBILE RESPONSIVE
-=========================== */
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .cabecalho {
-    padding: 0 20px;
-
-    .hamburguer {
-      display: block;
-      color: #3a1f5d;
+    .hamburguer { display: flex; align-items: center; }
+    
+    // Esconde detalhes do logo no mobile para dar espaço ao hambúrguer
+    .logo-area {
+      .spec, .divider { display: none; }
     }
 
-    /* MENU NO MOBILE */
     .menu {
       position: fixed;
-      top: 65px;
-      right: -100%;
-      width: 60%;
+      top: 0;
+      right: -100%; // Escondido
+      width: 80%;   // Ocupa 80% da largura
+      max-width: 320px;
       height: 100vh;
-      background: #ffffffee;
-      backdrop-filter: blur(12px);
-      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-
+      background: #fff;
       flex-direction: column;
-      align-items: flex-start;
-      padding: 40px 20px;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
       gap: 25px;
+      transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
 
-      transition: 0.3s ease-in-out;
+      &.menu-open {
+        right: 0; // Desliza para dentro
+      }
 
-      a {
+      a:not(.btn-nav) {
         font-size: 18px;
-        padding: 8px 0;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .btn-nav {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 10px;
       }
     }
 
-    /* QUANDO O MENU ABRE */
-    .menu-open {
-      right: 0;
+    .menu-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+
+      z-index: 1900;
     }
+  }
+}
+
+// Pequeno ajuste para celulares muito estreitos (iPhone SE, etc)
+@media (max-width: 360px) {
+  .cabecalho .logo-area .name {
+    font-size: 18px;
   }
 }

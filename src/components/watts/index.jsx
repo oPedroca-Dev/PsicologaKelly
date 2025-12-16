@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import "./index.scss";
 
@@ -14,8 +13,9 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/11942045057?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20fiquei%20interessado(a).%20Pode%20me%20ajudar%20com%20algumas%20d%C3%BAvidas?%20%F0%9F%99%82"
+      href="https://wa.me/5511942045057?text=Olá! Gostaria de informações sobre horários e como funciona a consulta."
       target="_blank"
+      rel="noopener noreferrer"
       className="zap-btn"
     >
       <div className={`zap-content ${isMobile ? "mobile" : "desktop"}`}>
@@ -24,8 +24,7 @@ export default function WhatsAppButton() {
           src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
           alt="WhatsApp"
         />
-
-        {!isMobile && <span className="zap-text">Tire suas dúvidas</span>}
+        {!isMobile && <span className="zap-text">Agendar Acolhimento</span>}
       </div>
     </a>
   );

@@ -1,5 +1,5 @@
   import "./index.scss";
-  import { Instagram, Linkedin, MessageCircle, MapPin, Mail } from "lucide-react"; // Usando Lucide para manter o padrão moderno
+  import { Instagram, Linkedin, MessageCircle, MapPin, Mail } from "lucide-react"; 
 
   export default function Rodape() {
     return (

@@ -11,7 +11,6 @@ export default function Cabecalho() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Bloqueia o scroll do corpo quando o menu está aberto
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);

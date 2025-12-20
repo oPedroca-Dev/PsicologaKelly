@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Heart, Users, CheckCircle2 } from "lucide-react"; // Importe os ícones
+import { Brain, Heart, Users, CheckCircle2 } from "lucide-react"; 
 import "./index.scss";
 
 export default function Dores() {

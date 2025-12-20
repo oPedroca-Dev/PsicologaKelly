@@ -6,23 +6,23 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden; // Impede a rolagem lateral indesejada
+  overflow-x: hidden; 
 }
 .hero-modern {
   position: relative;
   width: 100%;
-  min-height: 100vh; // Mudado de 90vh para 100vh para preencher a tela inicial
+  min-height: 100vh; 
   background: linear-gradient(135deg, #f9f6ff 0%, #ffffff 100%);
   display: flex;
   align-items: center;
-  padding: 100px 5% 80px; // Padding superior maior para não bater no cabeçalho fixo
+  padding: 100px 5% 80px; 
   overflow: hidden;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr; // Texto levemente maior que a imagem
+    grid-template-columns: 1.1fr 0.9fr; 
     gap: 60px;
     align-items: center;
     width: 100%;
@@ -46,7 +46,7 @@ html, body {
     }
 
     h1 {
-      font-size: clamp(32px, 5vw, 56px); // Tamanho fluido
+      font-size: clamp(32px, 5vw, 56px); 
       line-height: 1.15;
       color: #2d2d2d;
       font-weight: 800;
@@ -97,7 +97,7 @@ html, body {
 
     .blob-shape {
       width: 100%;
-      aspect-ratio: 1 / 1.1; // Mantém a proporção sem fixar altura em pixels
+      aspect-ratio: 1 / 1.1; 
       max-width: 480px;
       border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
       overflow: hidden;
@@ -162,7 +162,7 @@ html, body {
     .image-side {
       order: 1;
       .blob-shape {
-        width: 280px; // Reduzido para não ocupar a tela toda no mobile
+        width: 280px; 
         height: 300px;
       }
       .floating-card {
@@ -182,7 +182,7 @@ html, body {
     .text-side {
       h1 { font-size: 30px; }
       p { font-size: 16px; }
-      .btn-modern { width: 100%; justify-content: center; } // Botão largo no mobile
+      .btn-modern { width: 100%; justify-content: center; } 
     }
 
     .image-side .blob-shape {

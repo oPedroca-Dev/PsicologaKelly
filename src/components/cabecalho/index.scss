@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; // Reduzi um pouco a altura inicial para mobile
+  height: 80px; 
   display: flex;
   align-items: center;
-  padding: 0; // Removido o padding daqui para não somar com o 100% width
+  padding: 0; 
   background: transparent;
   transition: all 0.4s ease;
   z-index: 2000;
@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; // Padding consistente nas laterais
+    padding: 0 20px; 
   }
 
   .logo-area {
@@ -36,13 +36,13 @@
 
     .name {
       font-family: 'Playfair Display', serif;
-      font-size: 20px; // Ajustado para não quebrar em telas pequenas
+      font-size: 20px; 
       font-weight: 700;
       color: #1a1a1a;
-      white-space: nowrap; // Impede que o nome quebre em duas linhas
+      white-space: nowrap; 
     }
     .divider, .spec {
-      display: inline-block; // Garante que apareçam no desktop
+      display: inline-block; 
     }
     .divider { color: #9746ab; font-weight: 300; }
     .spec {
@@ -109,15 +109,14 @@
   }
 }
 
-/* ============================================================
-   RESPONSIVIDADE (Ajustes Reais)
-   ============================================================ */
+/* ===============
+   RESPONSIVIDADE 
+   =============== */
 
 @media (max-width: 992px) {
   .cabecalho {
     .hamburguer { display: flex; align-items: center; }
     
-    // Esconde detalhes do logo no mobile para dar espaço ao hambúrguer
     .logo-area {
       .spec, .divider { display: none; }
     }
@@ -125,8 +124,8 @@
     .menu {
       position: fixed;
       top: 0;
-      right: -100%; // Escondido
-      width: 80%;   // Ocupa 80% da largura
+      right: -100%; 
+      width: 80%;   
       max-width: 320px;
       height: 100vh;
       background: #fff;
@@ -139,7 +138,7 @@
       box-shadow: -10px 0 30px rgba(0,0,0,0.1);
 
       &.menu-open {
-        right: 0; // Desliza para dentro
+        right: 0; 
       }
 
       a:not(.btn-nav) {
@@ -170,7 +169,6 @@
   }
 }
 
-// Pequeno ajuste para celulares muito estreitos (iPhone SE, etc)
 @media (max-width: 360px) {
   .cabecalho .logo-area .name {
     font-size: 18px;

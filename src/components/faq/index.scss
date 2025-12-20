@@ -8,7 +8,7 @@
     max-width: 1200px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.5fr; // Divide em duas colunas desiguais
+    grid-template-columns: 1fr 1.5fr; 
     gap: 80px;
     align-items: start;
   }
@@ -104,9 +104,9 @@
   }
 }
 
-/* ===================================================================
+/* ===================
    📱 RESPONSIVIDADE
-=================================================================== */
+======================*/
 
 @media (max-width: 992px) {
   .faq-section {

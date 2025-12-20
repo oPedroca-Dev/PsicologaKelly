@@ -46,7 +46,6 @@ export default function Quemsomos() {
             <p>Certificações:</p>
             <div className="logos-grid">
               <img src="puc.png" alt="PUC-RS" />
-              {/* Adicione outros logos aqui se houver */}
             </div>
           </div>
         </div>

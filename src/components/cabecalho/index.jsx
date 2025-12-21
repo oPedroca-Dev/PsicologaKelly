@@ -56,7 +56,7 @@ export default function Cabecalho() {
           <a href="#duvidas" onClick={(e) => handleAnchor(e, "#duvidas")}>Dúvidas</a>
           <a href="#contato" onClick={(e) => handleAnchor(e, "#contato")}>Contato</a>
           <a href="https://wa.me/11942045057" target="_blank" rel="noreferrer" className="btn-nav">
-             Agendar Consulta
+             Agendar Avaliação
           </a>
         </nav>
 

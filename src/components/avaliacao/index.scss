@@ -1,0 +1,188 @@
+.avaliacoes-premium {
+  // Ajustado para não sobrar tanto espaço em telas pequenas
+  padding: clamp(60px, 10vh, 120px) 20px; 
+  background-color: #fdfdfd;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .bg-decoration {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: clamp(200px, 40vw, 400px); // Diminui o enfeite no mobile
+    height: clamp(200px, 40vw, 400px);
+    background: radial-gradient(circle, rgba(153, 68, 179, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+  }
+
+  .header-box {
+    position: relative;
+    z-index: 1;
+    margin-bottom: clamp(40px, 8vh, 70px);
+    
+    .subtitle {
+      color: #9944b3;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .titulo { 
+      font-size: clamp(1.8rem, 5vw, 2.5rem); // Título responsivo
+      color: #1a1a1a; 
+      font-weight: 800; 
+    }
+    .underline { width: 40px; height: 4px; background: #9944b3; margin: 12px auto 0; border-radius: 2px; }
+  }
+
+  .carousel-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; // Reduzido para não empurrar os botões para fora
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: #ffffff;
+    // Padding fluido: maior no desktop, menor no mobile
+    padding: clamp(40px, 6vw, 60px) clamp(20px, 5vw, 50px) clamp(30px, 5vw, 50px);
+    border-radius: clamp(25px, 5vw, 40px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+
+    .quote-badge {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #9944b3;
+      color: white;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 15px rgba(153, 68, 179, 0.25);
+      
+      svg { width: 24px; }
+    }
+
+    .stars-row {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .main-text {
+      // Texto que se adapta ao tamanho da tela
+      font-size: clamp(1rem, 2.5vw, 1.15rem); 
+      color: #444;
+      line-height: 1.8;
+      text-align: justify;
+      hyphens: auto; // Evita buracos no texto justificado
+      font-style: italic;
+      margin-bottom: 30px;
+      
+      // Melhora a aparência da última linha do justificado no mobile
+      @media (max-width: 600px) {
+        text-align-last: center;
+      }
+    }
+
+    .profile-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-top: 1px solid #f5f5f5;
+      padding-top: 25px;
+      flex-wrap: wrap; // Garante que não quebre em telas muito finas
+
+      .img-wrapper {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 2px solid #9944b3;
+        img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+      }
+
+      .info {
+        text-align: left;
+        h4 { margin: 0; font-size: 1rem; color: #222; font-weight: 700; }
+        span { color: #999; font-size: 0.8rem; }
+      }
+    }
+  }
+
+  .nav-arrow {
+    background: white;
+    border: 1px solid #eee;
+    color: #9944b3;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; // Impede o botão de esmagar
+
+    &:hover {
+      background: #9944b3;
+      color: white;
+      border-color: #9944b3;
+      transform: translateY(-2px);
+    }
+
+    &:active { transform: scale(0.95); }
+
+    // Esconde setas em dispositivos touch para evitar poluição visual
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  .dots-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+    .dot-item {
+      border: none;
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &.active { 
+        background: #9944b3; 
+        width: 28px; 
+        border-radius: 10px; 
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

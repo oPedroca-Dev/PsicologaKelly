@@ -1,131 +1,94 @@
+$primary-color:#9746ab;
+$whatsapp-color: #9746ab;
 
 .footer {
-  background-color: #0f0f0f; 
-  color: #e0e0e0;
-  padding: 80px 5% 30px;
+  background-color: #000000; // Fundo Preto
+  color: #ffffff; // Letras Brancas
+  
+  // Bordas arredondadas apenas em cima
+  border-radius: 40px 40px 0 0; 
+  padding: 60px 20px 30px;
   font-family: 'Inter', sans-serif;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  margin-top: 80px;
-  position: relative;
 
   .footer-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; 
-    gap: 60px;
-  }
-
-  /* Coluna da Marca */
-  .footer-brand {
-    h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 2rem;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-    .brand-desc {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #999;
-      margin-bottom: 25px;
-      max-width: 320px;
-    }
-    .footer-social {
-      display: flex;
-      gap: 15px;
-      a {
-        width: 40px;
-        height: 40px;
-        border: 1px solid #333;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        transition: all 0.3s ease;
-        &:hover {
-          background: #9746ab;
-          border-color: #9746ab;
-          transform: translateY(-3px);
-        }
-      }
-    }
-  }
-
-  /* Colunas de Info e Links */
-  .footer-info, .footer-legal {
-    h4 {
-      color: #ffffff;
-      font-size: 18px;
-      margin-bottom: 25px;
-      font-weight: 600;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-        font-size: 14px;
-        color: #999;
-      }
-    }
-    p { font-size: 14px; color: #999; margin-bottom: 12px; }
-  }
-
-  .dev-credit {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 13px;
-    color: #666;
-    text-decoration: none;
-    transition: 0.3s;
-    span { font-weight: 700; color: #888; }
-    &:hover { color: #9746ab; span { color: #9746ab; } }
-  }
-
-  /* Rodapé Final */
-  .footer-bottom {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid #222;
-    text-align: center;
-    .bottom-content {
-      font-size: 13px;
-      color: #555;
-      letter-spacing: 0.5px;
-    }
-  }
-}
-
-/* ==========================================================
-   📱 RESPONSIVIDADE
-========================================================== */
-
-@media (max-width: 992px) {
-  .footer .footer-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
     gap: 40px;
-  }
-}
 
-@media (max-width: 650px) {
-  .footer {
-    padding: 60px 20px 30px;
-    .footer-container {
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
       text-align: center;
     }
-    .footer-brand {
+  }
+
+  h3 { font-size: 1.6rem; color: #fff; margin-bottom: 15px; }
+  h4 { color: $primary-color; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; }
+
+  .brand-desc { color: #ccc; line-height: 1.6; margin-bottom: 25px; }
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    @media (max-width: 768px) { justify-content: center; }
+
+    a {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      .brand-desc { max-width: 100%; }
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $primary-color;
+        transform: translateY(-5px);
+        &.whatsapp-social { background: $whatsapp-color; }
+      }
     }
-    .footer-info ul li { justify-content: center; }
+  }
+
+  .footer-info ul {
+    list-style: none;
+    padding: 0;
+    li { margin-bottom: 15px; }
+  }
+
+  .footer-link, .footer-legal a {
+    text-decoration: none;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    @media (max-width: 768px) { justify-content: center; }
+
+    &:hover { color: #fff; transform: translateX(5px); }
+    
+    svg { color: $primary-color; }
+  }
+
+  .footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #666;
+    
+    .bottom-content {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 768px) { flex-direction: column; gap: 10px; }
+    }
+
+    .dev-credit {
+      text-decoration: none;
+      color: inherit;
+      span { color: #aaa; font-weight: bold; }
+    }
   }
 }

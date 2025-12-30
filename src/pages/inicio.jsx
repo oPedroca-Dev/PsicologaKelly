@@ -6,6 +6,7 @@ import Quemsomos from "../components/quemsomos";
 import BigNum from "../components/bignum";
 import FAQ from "../components/faq";
 import Rodape from "../components/rodape";
+import Avaliacoes from "../components/avaliacao";
 import WhatsAppButton from "../components/watts";
 
 export default function Inicio() {
@@ -18,6 +19,7 @@ export default function Inicio() {
       <Servico />
       <Quemsomos />
       <BigNum />
+      <Avaliacoes />
       <FAQ />
       <Rodape />
     </div>

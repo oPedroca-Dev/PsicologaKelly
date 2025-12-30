@@ -92,7 +92,7 @@ export default function Dores() {
         >
           <p>Identificou-se com algum desses pontos? Vamos conversar.</p>
           <a
-            href="https://calendar.app.google/S78sNJuADpTCmqhu6"
+            href="https://calendar.app.google/V2ZF5Ykx6Z1YG7Q19"
             className="btn-consulta-modern"
             target="_blank"
             rel="noopener noreferrer"

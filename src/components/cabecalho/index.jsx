@@ -55,7 +55,7 @@ export default function Cabecalho() {
           <a href="#QuemSou" onClick={(e) => handleAnchor(e, "#QuemSou")}>Sobre</a>
           <a href="#duvidas" onClick={(e) => handleAnchor(e, "#duvidas")}>Dúvidas</a>
           <a href="#contato" onClick={(e) => handleAnchor(e, "#contato")}>Contato</a>
-          <a href="https://wa.me/11942045057" target="_blank" rel="noreferrer" className="btn-nav">
+          <a href="https://calendar.app.google/rCtSboNJmBWm9FQi8" target="_blank" rel="noreferrer" className="btn-nav">
              Agendar Avaliação
           </a>
         </nav>

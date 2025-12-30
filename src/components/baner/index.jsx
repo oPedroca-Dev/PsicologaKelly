@@ -30,7 +30,7 @@ export default function Baner() {
           </p>
 
           <div className="fade-up delay-3">
-            <a href="https://calendar.app.google/..." className="btn-modern">
+            <a href="https://calendar.app.google/V2ZF5Ykx6Z1YG7Q19" className="btn-modern">
               Começar minha jornada <ArrowRight size={20} />
             </a>
           </div>

@@ -45,7 +45,7 @@ export default function FAQ() {
           </p>
           <div className="faq-cta">
             <span>Ainda tem dúvidas?</span>
-            <a href="https://wa.me/5511942045057?text=Olá!%20Gostaria%20de%20informações%20sobre%20horários%20e%20como%20funciona%20a%20avaliação." target="_blank" rel="noreferrer">
+            <a href="https://wa.me/5511984308198?text=Olá!%20Gostaria%20de%20informações%20sobre%20horários%20e%20como%20funciona%20a%20avaliação." target="_blank" rel="noreferrer">
               Me chame no WhatsApp
             </a>
           </div>

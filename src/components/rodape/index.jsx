@@ -43,7 +43,7 @@ export default function Rodape() {
             </li>
             <li>
               <a href="mailto:kellymferreirapsi@gmail.com" className="footer-link">
-                <Mail size={18} /> <span>kellymferreirapsi@gmail.com</span>
+                <Mail size={18} /> <span>kelly.ferreira@psievoce.com.br</span>
               </a>
             </li>
             <li>

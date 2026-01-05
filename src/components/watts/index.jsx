@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/5511942045057?text=Olá!%20Gostaria%20de%20informações%20sobre%20horários%20e%20como%20funciona%20a%20avaliação."
+      href="https://wa.me/5511984308198?text=Olá!%20Gostaria%20de%20informações%20sobre%20horários%20e%20como%20funciona%20a%20avaliação."
       target="_blank"
       rel="noopener noreferrer"
       className="zap-btn"

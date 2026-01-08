@@ -38,7 +38,7 @@
     padding: 60px; 
     display: flex;
     flex-direction: column;
-    align-items: center;      // Mantém o bloco de conteúdo no centro
+    align-items: center;      
     justify-content: center;   
     position: relative;
 
@@ -47,7 +47,7 @@
       opacity: 0.1; 
       position: absolute; 
       top: 30px; 
-      left: 50%;
+      left: 90%;
       transform: translateX(-50%); 
     }
 
@@ -59,7 +59,7 @@
         color: #222; 
         margin-bottom: 25px; 
         line-height: 1.2;
-        text-align: center;   // Título permanece centralizado
+        text-align: center;   
       }
 
       p { 
@@ -68,9 +68,7 @@
         line-height: 1.8; 
         margin: 0 auto;
         max-width: 90%; 
-        text-align: justify;  // <-- TEXTO JUSTIFICADO
-        
-        // Adiciona hifenação para evitar espaços muito grandes entre as palavras
+        text-align: justify;  
         hyphens: auto; 
       }
     }
@@ -119,7 +117,7 @@
     .content-side { 
       padding: 40px 25px; 
       .text-content p { 
-        text-align: justify; // Justificado também no mobile
+        text-align: justify; 
         font-size: 16px; 
       }
     } 

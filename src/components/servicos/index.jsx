@@ -5,15 +5,9 @@ import "./index.scss";
 const cards = [
   {
     title: "Acompanhamento Psicológico",
-    desc: "No acompanhamento psicológico, ofereço um espaço seguro e acolhedor para que você possa se ouvir, se entender e se fortalecer emocionalmente. Através de encontros regulares, te ajudo a olhar com mais clareza para suas emoções, pensamentos e comportamentos, construindo juntos caminhos mais leves e saudáveis para lidar com os desafios da vida.",
+    desc: "Atendimento PsicológicoEspaço acolhedor, ético e seguro para falar com liberdade e sem julgamentos.O acompanhamento psicológico auxilia no autoconhecimento e no fortalecimento emocional, promovendo formas mais leves e saudáveis de lidar com os desafios da vida.Atendimento baseado na Terapia Cognitivo-Comportamental (TCC), com apoio da Neurociência, focado na compreensão de emoções, pensamentos e comportamentos.",
     image: "/acompanhamento.jpg",
     color: "#f8f0fb"
-  },
-  {
-    title: "Consulta Psicológica",
-    desc: "Cuidar da mente é tão importante quanto cuidar do corpo. Na consulta psicológica, você encontra um espaço acolhedor e ético, onde é possível falar com liberdade, sem julgamentos. Aqui, utilizo abordagens como Terapia Cognitivo-Comportamental e conhecimentos em Neurociência para te ajudar a compreender suas emoções.",
-    image: "/consulta.jpg",
-    color: "#eff7fd"
   },
   {
     title: "Hipnoterapia",
